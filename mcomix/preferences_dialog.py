@@ -2,6 +2,8 @@
 
 """preferences_dialog.py - Preferences dialog."""
 
+from itertools import groupby
+from collections import defaultdict
 import operator
 import gtk
 import gobject
@@ -11,6 +13,7 @@ from mcomix import preferences_page
 from mcomix import image_tools
 from mcomix import constants
 from mcomix import message_dialog
+from mcomix import keybindings
 
 _dialog = None
 
@@ -48,6 +51,8 @@ class _PreferencesDialog(gtk.Dialog):
         notebook.append_page(display, gtk.Label(_('Display')))
         advanced = self._init_advanced_tab()
         notebook.append_page(advanced, gtk.Label(_('Advanced')))
+        shortcuts = self._init_shortcuts_tab()
+        notebook.append_page(shortcuts, gtk.Label(_('Shortcuts')))
 
         self.show_all()
 
@@ -417,6 +422,113 @@ class _PreferencesDialog(gtk.Dialog):
             _('Treat all files found within archives, that have one of these file endings, as comments.'))
         page.add_row(label, extensions_entry)
 
+        return page
+
+    def _init_shortcuts_tab(self):
+        # ----------------------------------------------------------------
+        # The "Shortcuts" tab.
+        # ----------------------------------------------------------------
+        km = keybindings.keybinding_manager(self._window)
+        page = gtk.ScrolledWindow()
+        page.set_border_width(5)
+        page.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_ALWAYS)
+
+        accel_column_num = max([
+            len(km.get_bindings_for_action(action))
+            for action in keybindings.BINDING_INFO.keys()
+        ])
+        accel_column_num = max([3, accel_column_num])
+
+        # Human name, action name, true value, shortcut 1, shortcut 2, ...
+        model = [str, str, 'gboolean']
+        model.extend( [str, ] * accel_column_num)
+
+        treestore = gtk.TreeStore(*model)
+
+        section_order = [u'Reading', u'User interface', u'Page orientation and zoom']
+        section_parent_map = {}
+        for section_name in section_order:
+            row = [section_name, None, False]
+            row.extend( [None,]*accel_column_num)
+            section_parent_map[section_name] =  treestore.append(
+                None, row
+            )
+
+        action_treeiter_map = {}
+        for action_name in keybindings.BINDING_INFO.keys():
+            action_data = keybindings.BINDING_INFO[action_name]
+            title = action_data['title']
+            group_name = action_data['group']
+            old_bindings = km.get_bindings_for_action(action_name)
+            acc_list =  ["", ] * accel_column_num
+            for idx in range(0, accel_column_num):
+                if len(old_bindings) > idx:
+                    acc_list[idx] = gtk.accelerator_name(*old_bindings[idx])
+
+            row = [title, action_name, True]
+            row.extend(acc_list)
+            treeiter = treestore.append(
+                section_parent_map[group_name],
+                row
+            )
+            action_treeiter_map[action_name] = treeiter
+
+        def get_on_accel_edited(column):
+            def on_accel_edited(renderer, path, accel_key, accel_mods, hardware_keycode):
+                iter = treestore.get_iter(path)
+                col = column + 3  # accel cells start from 3 position
+                old_accel = treestore.get(iter, col)[0]
+                new_accel = gtk.accelerator_name(accel_key, accel_mods)
+                treestore.set_value(iter, col, new_accel)
+                action_name = treestore.get_value(iter, 1)
+                affected_action = km.edit_accel(action_name, new_accel, old_accel)
+
+                #Find affected row and cell
+                if affected_action == action_name:
+                    for idx in range(0, accel_column_num):
+                        if idx != column and treestore.get(iter, idx + 3)[0] == new_accel:
+                            treestore.set_value(iter, idx + 3, "")
+                elif affected_action is not None:
+                    titer = action_treeiter_map[affected_action]
+                    for idx in range(0, accel_column_num):
+                        if treestore.get(titer, idx + 3)[0] == new_accel:
+                            treestore.set_value(titer, idx + 3, "")
+
+            return on_accel_edited
+
+        def get_on_accel_cleared(column):
+            def on_accel_cleared(renderer, path, *args):
+                iter = treestore.get_iter(path)
+                col = column + 3
+                accel = treestore.get(iter, col)[0]
+                action_name = treestore.get_value(iter, 1)
+                if accel != "":
+                    km.clear_accel(action_name, accel)
+                treestore.set_value(iter, col, "")
+            return on_accel_cleared
+
+        treeview = gtk.TreeView(treestore)
+
+        tvcol1 = gtk.TreeViewColumn("Name")
+        treeview.append_column(tvcol1)
+        cell1 = gtk.CellRendererText()
+        tvcol1.pack_start(cell1, True)
+        tvcol1.set_attributes(cell1, text=0, editable=True)
+
+        for idx in range(0, accel_column_num):
+            tvc = gtk.TreeViewColumn("Key %s" % (idx +1))
+            treeview.append_column(tvc)
+            accel_cell = gtk.CellRendererAccel()
+            accel_cell.connect("accel-edited", get_on_accel_edited(idx))
+            accel_cell.connect("accel-cleared", get_on_accel_cleared(idx))
+            tvc.pack_start(accel_cell, True)
+            tvc.add_attribute(accel_cell, "text", 3 + idx)
+            tvc.add_attribute(accel_cell, "editable", 2)
+
+        # Allow sorting on the column
+        tvcol1.set_sort_column_id(0)
+
+        page.add_with_viewport(treeview)
         return page
 
     def _response(self, dialog, response):

@@ -1156,7 +1156,6 @@ class MainWindow(gtk.Window):
         bookmark_backend.BookmarksStore.write_bookmarks_file()
 
         # Write keyboard accelerator map
-        gtk.accel_map_save(constants.KEYBINDINGS_PATH)
         keybindings.keybinding_manager(self).save()
 
     def save_and_terminate_program(self, *args):
