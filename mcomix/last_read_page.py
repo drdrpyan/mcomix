@@ -183,8 +183,16 @@ class LastReadPage(object):
 
                 if not book:
                     # The path doesn't exist in the library yet
+                    if not os.path.exists(path):
+                        # File might no longer be available
+                        continue
+
                     self.backend.add_book(path, recent_collection)
                     book = self.backend.get_book_by_path(path)
+
+                    if not book:
+                        # The book could not be added
+                        continue
                 else:
                     # The book exists, move into recent collection
                     self.backend.add_book_to_collection(book.id, recent_collection)

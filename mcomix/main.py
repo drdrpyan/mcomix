@@ -81,7 +81,6 @@ class MainWindow(gtk.Window):
         self.lens = lens.MagnifyingLens(self)
         self.osd = osd.OnScreenDisplay(self)
         self.zoom = zoom.ZoomModel()
-        self.zoom.zoom_changed += lambda zoom: self.draw_image()
         self.uimanager = ui.MainUI(self)
         self.menubar = self.uimanager.get_widget('/Menu')
         self.toolbar = self.uimanager.get_widget('/Tool')
@@ -665,8 +664,10 @@ class MainWindow(gtk.Window):
             prefs['zoom mode'] = radioaction.get_current_value()
 
         fitmode = zoom.FitMode.create(prefs['zoom mode'])
-        fitmode.set_scale_up(prefs['stretch'])
         self.zoom.set_fit_mode(fitmode)
+        self.zoom.set_scale_up(prefs['stretch'])
+        self.zoom.reset_user_zoom()
+        self.draw_image()
 
     def change_autorotation(self, radioaction=None, *args):
         """ Switches between automatic rotation modes, depending on which
@@ -679,7 +680,7 @@ class MainWindow(gtk.Window):
     def change_stretch(self, toggleaction, *args):
         """ Toggles stretching small images. """
         prefs['stretch'] = toggleaction.get_active()
-        self.zoom.get_fit_mode().set_scale_up(prefs['stretch'])
+        self.zoom.set_scale_up(prefs['stretch'])
         self.draw_image()
 
     def change_toolbar_visibility(self, *args):
@@ -717,12 +718,15 @@ class MainWindow(gtk.Window):
 
     def manual_zoom_in(self, *args):
         self.zoom.zoom_in()
+        self.draw_image()
 
     def manual_zoom_out(self, *args):
         self.zoom.zoom_out()
+        self.draw_image()
 
     def manual_zoom_original(self, *args):
-        self.zoom.reset_zoom()
+        self.zoom.reset_user_zoom()
+        self.draw_image()
 
     def _show_scrollbars(self, img_size, screen_size):
         """ Enables scroll bars depending on image size
@@ -748,6 +752,19 @@ class MainWindow(gtk.Window):
             self._vscroll.hide_all()
             self._hscroll.hide_all()
 
+    def is_scrollable_horizontally(self):
+        """ Returns True when the displayed image does not fit into the display
+        port horizontally and must be scrolled to be viewed completely. """
+
+        screen_width, _ = self.get_visible_area_size()
+        left_width = self.left_image.get_pixbuf() and \
+                self.left_image.get_pixbuf().get_width() or 0
+        right_width = self.right_image.get_pixbuf() and \
+                self.right_image.get_pixbuf().get_width() or 0
+        image_width = max(left_width, right_width)
+
+        return image_width > screen_width
+
     def is_scrollable_vertically(self):
         """ Returns True when the displayed image does not fit into the display
         port vertically and must be scrolled to be viewed completely. """
@@ -760,6 +777,12 @@ class MainWindow(gtk.Window):
         image_height = max(left_height, right_height)
 
         return image_height > screen_height
+
+    def is_scrollable(self):
+        """ Returns True when either is_scrollable_horizontally or
+        is_scrollable_vertically return True. """
+        return self.is_scrollable_horizontally() or \
+               self.is_scrollable_vertically()
 
     def scroll_with_flipping(self, x, y):
         """Returns true if able to scroll without flipping to

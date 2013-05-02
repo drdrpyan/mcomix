@@ -1,4 +1,14 @@
+MComix 1.01
+
+    - During database upgrade, MComix did not consider that books in the
+      "Last read" database might no longer exist, leading to program crash.
+      This has been fixed.
+
+    - The ALT+Left and ALT+Right keys will now either advance one page,
+      or go back one page, depending on the user being in manga mode or not.
+
 MComix 1.00
+Release date: 26.04.2013
 
     - When "Store information about recently opened files" is enabled in
       the preferences dialog, all opened books will automatically be added
@@ -22,6 +32,9 @@ MComix 1.00
 
     - Deleting a file in the library without closing the same file in the main
       window before no longer causes an exception.
+
+    - The two images in double-page mode will now scale separately again.
+      (by Valentin Gologuzov)
 
     - "Fit to size" mode no longer scales up small images unless "Stretch
       small images" is enabled as well.
@@ -64,6 +77,9 @@ MComix 1.00
       comicthumb is unmaintained and not installed by MComix' setup routine
       by default.
 
+    - MComix will no longer complain that the PIL library is missing when 
+      a user has Pillow (a PIL fork) installed.
+
     - Updated traditional Chinese translation (by Wayne Su).
 
     - Updated Hebrew translation (by Isratine Citizen).
@@ -75,6 +91,8 @@ MComix 1.00
     - Updated simplified Chinese translation (by Zach Cheung).
 
     - Updated French translation (by Frédéric Chateaux).
+
+    - Updated Italian translation (by Giovanni Scafora).
 
 MComix 0.99
 Release date: 14.07.2012
