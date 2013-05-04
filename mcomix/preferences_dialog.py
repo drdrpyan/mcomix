@@ -515,7 +515,7 @@ class _PreferencesDialog(gtk.Dialog):
         treeview.append_column(tvcol1)
         cell1 = gtk.CellRendererText()
         tvcol1.pack_start(cell1, True)
-        tvcol1.set_attributes(cell1, text=0, editable=True)
+        tvcol1.set_attributes(cell1, text=0, editable=2)
 
         for idx in range(0, accel_column_num):
             tvc = gtk.TreeViewColumn("Key %s" % (idx +1))
