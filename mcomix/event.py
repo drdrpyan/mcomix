@@ -125,6 +125,9 @@ class EventHandler:
         manager.register('zoom in',
             ['equal'],
             self._window.actiongroup.get_action('zoom_in').activate)
+        manager.register('zoom out',
+            [],
+            self._window.actiongroup.get_action('zoom_out').activate)
         # Zoom out is already defined as GTK menu hotkey
         manager.register('zoom original',
             ['KP_0'],
