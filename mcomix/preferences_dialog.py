@@ -455,8 +455,10 @@ class _PreferencesDialog(gtk.Dialog):
             )
 
         action_treeiter_map = {}
-        for action_name in keybindings.BINDING_INFO.keys():
-            action_data = keybindings.BINDING_INFO[action_name]
+        # Sort actions by action name
+        actions = sorted(keybindings.BINDING_INFO.items(),
+                key=lambda item: item[1]['title'])
+        for action_name, action_data in actions:
             title = action_data['title']
             group_name = action_data['group']
             old_bindings = km.get_bindings_for_action(action_name)
