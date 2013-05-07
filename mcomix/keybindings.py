@@ -115,7 +115,13 @@ class _KeybindingManager(object):
                 self._binding_to_action[keycode] = name
                 self._action_to_bindings[name].append(keycode)
 
+        # Add gtk accelerator for labels in menu
+        if len(self._action_to_bindings[name]) > 0:
+            key, mod = self._action_to_bindings[name][0]
+            gtk.accel_map_change_entry('<Actions>/mcomix-main/%s' % name, key, mod, True)
+
         self._action_to_callback[name] = (callback, args, kwargs)
+
 
     def edit_accel(self, name, new_binding, old_binding):
         """ Changes binding for an action
