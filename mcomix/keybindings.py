@@ -34,46 +34,111 @@ from mcomix import log
 #: Bindings defined in this dictionary will appear in the configuration dialog.
 #: If 'group' is None, the binding cannot be modified from the preferences dialog.
 BINDING_INFO = {
-    'previous page' : { 'title' : _('Previous page'), 'group' : _('Reading') },
-    'next page' : { 'title' : _('Next page'), 'group' : _('Reading') },
-    'previous page ff' : { 'title': _('Back ten pages'), 'group': _('Reading') },
-    'next page ff' : { 'title': _('Forward ten pages'), 'group': _('Reading') },
-    'previous page dynamic' : { 'title': _('Previous page (dynamic)'), 'group': _('Reading') },
-    'next page dynamic' : { 'title': _('Next page (dynamic)'), 'group': _('Reading') },
+    # Navigation between pages, archives, directories
+    'previous_page' : { 'title' : _('Previous page'), 'group' : _('Navigation') },
+    'next_page' : { 'title' : _('Next page'), 'group' : _('Navigation') },
+    'previous_page_ff' : { 'title': _('Back ten pages'), 'group': _('Navigation') },
+    'next_page_ff' : { 'title': _('Forward ten pages'), 'group': _('Navigation') },
+    'previous_page_dynamic' : { 'title': _('Previous page (dynamic)'), 'group': _('Navigation') },
+    'next_page_dynamic' : { 'title': _('Next page (dynamic)'), 'group': _('Navigation') },
 
-    'scroll left bottom' : { 'title' : _('Scroll to bottom left'), 'group' : _('Page orientation and zoom')},
-    'scroll middle bottom' : { 'title' : _('Scroll to bottom center'), 'group' : _('Page orientation and zoom')},
-    'scroll right bottom' : { 'title' : _('Scroll to bottom right'), 'group' : _('Page orientation and zoom')},
+    'first_page' : { 'title': _('First page'), 'group': _('Navigation') },
+    'last_page' : { 'title': _('Last page'), 'group': _('Navigation') },
+    'go_to' : { 'title': _('Last page'), 'group': _('Navigation') },
 
-    'scroll left middle' : { 'title' : _('Scroll to middle left'), 'group' : _('Page orientation and zoom')},
-    'scroll middle' : { 'title' : _('Scroll to center'), 'group' : _('Page orientation and zoom')},
-    'scroll right middle' : { 'title' : _('Scroll to middle right'), 'group' : _('Page orientation and zoom')},
+    'next_archive' : { 'title': _('Next archive'), 'group': _('Navigation') },
+    'previous_archive' : { 'title': _('Previous archive'), 'group': _('Navigation') },
+    'next_directory' : { 'title': _('Next directory'), 'group': _('Navigation') },
+    'previous_directory' : { 'title': _('Previous directory'), 'group': _('Navigation') },
 
-    'scroll left top' : { 'title' : _('Scroll to top left'), 'group' : _('Page orientation and zoom')},
-    'scroll middle top' : { 'title' : _('Scroll to top center'), 'group' : _('Page orientation and zoom')},
-    'scroll right top' : { 'title' : _('Scroll to top right'), 'group' : _('Page orientation and zoom')},
+    # Scrolling
+    'scroll_left_bottom' : { 'title' : _('Scroll to bottom left'), 'group' : _('Scroll')},
+    'scroll_middle_bottom' : { 'title' : _('Scroll to bottom center'), 'group' : _('Scroll')},
+    'scroll_right_bottom' : { 'title' : _('Scroll to bottom right'), 'group' : _('Scroll')},
 
-    'exit fullscreen' : { 'title' : _('Exit from fullscreen'), 'group' : _('User interface')},
-    'toggle fullscreen' : { 'title' : _('Toggle fullscreen'), 'group' : _('User interface')},
+    'scroll_left_middle' : { 'title' : _('Scroll to middle left'), 'group' : _('Scroll')},
+    'scroll_middle' : { 'title' : _('Scroll to center'), 'group' : _('Scroll')},
+    'scroll_right_middle' : { 'title' : _('Scroll to middle right'), 'group' : _('Scroll')},
 
-    'zoom in' : { 'title' : _('Zoom in'), 'group' : _('Page orientation and zoom')},
-    'zoom out' : { 'title' : _('Zoom out'), 'group' : _('Page orientation and zoom')},
-    'zoom original' : { 'title' : _('Normal size'), 'group' : _('Page orientation and zoom')},
+    'scroll_left_top' : { 'title' : _('Scroll to top left'), 'group' : _('Scroll')},
+    'scroll_middle_top' : { 'title' : _('Scroll to top center'), 'group' : _('Scroll')},
+    'scroll_right_top' : { 'title' : _('Scroll to top right'), 'group' : _('Scroll')},
 
-    'scroll down' : { 'title' : _('Scroll down'), 'group' : _('Reading') },
-    'scroll up' : { 'title' : _('Scroll up'), 'group' : _('Reading') },
-    'scroll right' : { 'title' : _('Scroll right'), 'group' : _('Reading') },
-    'scroll left' : { 'title' : _('Scroll left'), 'group' : _('Reading') },
+    'scroll_down' : { 'title' : _('Scroll down'), 'group' : _('Scroll') },
+    'scroll_up' : { 'title' : _('Scroll up'), 'group' : _('Scroll') },
+    'scroll_right' : { 'title' : _('Scroll right'), 'group' : _('Scroll') },
+    'scroll_left' : { 'title' : _('Scroll left'), 'group' : _('Scroll') },
 
-    'smart scroll up' : { 'title' : _('Smart scroll up'), 'group' : _('Reading') },
-    'smart scroll down' : { 'title' : _('Smart scroll down'), 'group' : _('Reading') },
+    'smart_scroll_up' : { 'title' : _('Smart scroll up'), 'group' : _('Scroll') },
+    'smart_scroll_down' : { 'title' : _('Smart scroll down'), 'group' : _('Scroll') },
 
-    'osd panel' : { 'title' : _('Show OSD panel'), 'group' : _('User interface') },
+    # View
+    'zoom_in' : { 'title' : _('Zoom in'), 'group' : _('Zoom')},
+    'zoom_out' : { 'title' : _('Zoom out'), 'group' : _('Zoom')},
+    'zoom_original' : { 'title' : _('Normal size'), 'group' : _('Zoom')},
+
+    'keep_transformation' : { 'title': _('Keep transformation'), 'group': _('Transformation') },
+    'rotate_90' : { 'title': _('Rotate 90 degrees CW'), 'group': _('Transformation') },
+    'rotate_180' : { 'title': _('Rotate 180 degrees'), 'group': _('Transformation') },
+    'rotate_270' : { 'title': _('Rotate 90 degrees CCW'), 'group': _('Transformation') },
+    'flip_horiz' : { 'title': _('Flip horizontally'), 'group': _('Transformation') },
+    'flip_vert' : { 'title': _('Flip vertically'), 'group': _('Transformation') },
+    'no_autorotation' : { 'title': _('Never autorotate'), 'group': _('Transformation') },
+
+    'rotate_90_width' : { 'title': _('Rotate 90 degrees CW'), 'group': _('Autorotate by width') },
+    'rotate_270_width' : { 'title': _('Rotate 90 degrees CCW'), 'group': _('Autorotate by width') },
+    'rotate_90_height' : { 'title': _('Rotate 90 degrees CW'), 'group': _('Autorotate by height') },
+    'rotate_270_height' : { 'title': _('Rotate 90 degrees CCW'), 'group': _('Autorotate by height') },
+
+    'double_page' : { 'title': _('Double page mode'), 'group': _('View mode') },
+    'manga_mode' : { 'title': _('Manga mode'), 'group': _('View mode') },
+    'invert_scroll' : { 'title': _('Invert smart scroll'), 'group': _('View mode') },
+
+    'lens' : { 'title': _('Magnifying lens'), 'group': _('View mode') },
+    'stretch' : { 'title': _('Stretch small images'), 'group': _('View mode') },
+
+    'best_fit_mode' : { 'title': _('Best fit mode'), 'group': _('View mode') },
+    'fit_width_mode' : { 'title': _('Fit width mode'), 'group': _('View mode') },
+    'fit_height_mode' : { 'title': _('Fit height mode'), 'group': _('View mode') },
+    'fit_size_mode' : { 'title': _('Fit size mode'), 'group': _('View mode') },
+    'fit_manual_mode' : { 'title': _('Manual zoom mode'), 'group': _('View mode') },
+
+    # General UI
+    'exit_fullscreen' : { 'title' : _('Exit from fullscreen'), 'group' : _('User interface')},
+    'toggle_fullscreen' : { 'title' : _('Toggle fullscreen'), 'group' : _('User interface')},
+
+    'osd_panel' : { 'title' : _('Show OSD panel'), 'group' : _('User interface') },
+    'minimize' : { 'title' : _('Minimize'), 'group' : _('User interface') },
+    'fullscreen' : { 'title': _('Fullscreen'), 'group': _('User interface') },
+    'toolbar' : { 'title': _('Toolbar'), 'group': _('User interface') },
+    'menubar' : { 'title': _('Menubar'), 'group': _('User interface') },
+    'statusbar' : { 'title': _('Statusbar'), 'group': _('User interface') },
+    'scrollbar' : { 'title': _('Scrollbars'), 'group': _('User interface') },
+    'thumbnails' : { 'title': _('Thumbnails'), 'group': _('User interface') },
+    'hide_all' : { 'title': _('Hide all'), 'group': _('User interface') },
+    'slideshow' : { 'title': _('Start slideshow'), 'group': _('User interface') },
+
+    # File operations
+    'delete' : { 'title' : _('Delete'), 'group' : _('File') },
+    'refresh_archive' : { 'title': _('Refresh'), 'group': _('File') },
+    'close' : { 'title': _('Close'), 'group': _('File') },
+    'quit' : { 'title': _('Quit'), 'group': _('File') },
+    'save_and_quit' : { 'title': _('Save and quit'), 'group': _('File') },
+    'extract_page' : { 'title': _('Save As'), 'group': _('File') },
+
+    'comments' : { 'title': _('Comments...'), 'group': _('File') },
+    'properties' : { 'title': _('Properties'), 'group': _('File') },
+    'preferences' : { 'title': _('Preferences'), 'group': _('File') },
+
+    'edit_archive' : { 'title': _('Edit archive...'), 'group': _('File') },
+    'open' : { 'title': _('Open'), 'group': _('File') },
+    'enhance_image' : { 'title': _('Enhance image...'), 'group': _('File') },
+    'library' : { 'title': _('Library...'), 'group': _('File') },
 }
 
 # Generate 9 entries for executing command 1 to 9
 for i in range(1, 10):
-    BINDING_INFO['execute command %d' %i] = { 'title' : _('Execute external command') + u' (%d)' % i , 'group' : _('User interface') }
+    BINDING_INFO['execute_command_%d' %i] = { 'title' : _('Execute external command') + u' (%d)' % i , 'group' : _('External commands') }
 
 
 class _KeybindingManager(object):
@@ -115,7 +180,13 @@ class _KeybindingManager(object):
                 self._binding_to_action[keycode] = name
                 self._action_to_bindings[name].append(keycode)
 
+        # Add gtk accelerator for labels in menu
+        if len(self._action_to_bindings[name]) > 0:
+            key, mod = self._action_to_bindings[name][0]
+            gtk.accel_map_change_entry('<Actions>/mcomix-main/%s' % name, key, mod, True)
+
         self._action_to_callback[name] = (callback, args, kwargs)
+
 
     def edit_accel(self, name, new_binding, old_binding):
         """ Changes binding for an action

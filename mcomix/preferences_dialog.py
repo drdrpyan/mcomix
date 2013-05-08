@@ -445,7 +445,8 @@ class _PreferencesDialog(gtk.Dialog):
 
         treestore = gtk.TreeStore(*model)
 
-        section_order = [u'Reading', u'User interface', u'Page orientation and zoom']
+        section_order = list(set(d['group'] for d in keybindings.BINDING_INFO.values()))
+        section_order.sort()
         section_parent_map = {}
         for section_name in section_order:
             row = [section_name, None, False]
@@ -496,6 +497,10 @@ class _PreferencesDialog(gtk.Dialog):
                         if treestore.get(titer, idx + 3)[0] == new_accel:
                             treestore.set_value(titer, idx + 3, "")
 
+                # updating gtk accelerator for label in menu
+                if km.get_bindings_for_action(action_name)[0] == (accel_key, accel_mods):
+                    gtk.accel_map_change_entry('<Actions>/mcomix-main/%s' % action_name, accel_key, accel_mods, True)
+
             return on_accel_edited
 
         def get_on_accel_cleared(column):
@@ -506,6 +511,14 @@ class _PreferencesDialog(gtk.Dialog):
                 action_name = treestore.get_value(iter, 1)
                 if accel != "":
                     km.clear_accel(action_name, accel)
+
+                    # updating gtk accelerator for label in menu
+                    if len(km.get_bindings_for_action(action_name)) == 0:
+                        gtk.accel_map_change_entry('<Actions>/mcomix-main/%s' % action_name, 0, 0, True)
+                    else:
+                        key, mods  = km.get_bindings_for_action(action_name)[0]
+                        gtk.accel_map_change_entry('<Actions>/mcomix-main/%s' % action_name, key, mods, True)
+
                 treestore.set_value(iter, col, "")
             return on_accel_cleared
 
