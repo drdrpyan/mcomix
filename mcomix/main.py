@@ -97,7 +97,7 @@ class MainWindow(gtk.Window):
         self.set_size_request(300, 300)  # Avoid making the window *too* small
         self.resize(prefs['window width'], prefs['window height'])
 
-        # Hook up any additional key events not handled by UI accelerators
+        # Hook up keyboard shortcuts
         self._event_handler.register_key_events()
 
         # This is a hack to get the focus away from the toolbar so that
