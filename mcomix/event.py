@@ -182,10 +182,10 @@ class EventHandler:
 
         # Zooming commands for manual zoom mode
         manager.register('zoom_in',
-            ['KP_Add', 'equal'],
+            ['plus', 'KP_Add', 'equal'],
             self._window.actiongroup.get_action('zoom_in').activate)
         manager.register('zoom_out',
-            ['KP_Subtract'],
+            ['minus', 'KP_Subtract'],
             self._window.actiongroup.get_action('zoom_out').activate)
         # Zoom out is already defined as GTK menu hotkey
         manager.register('zoom_original',
@@ -196,12 +196,16 @@ class EventHandler:
             ['r'],
             self._window.rotate_90)
 
+        manager.register('rotate_270',
+            ['<Shift>r'],
+            self._window.rotate_270)
+
         manager.register('rotate_180',
             [],
             self._window.rotate_180)
 
         manager.register('flip_horiz',
-            ['<Shift>r'],
+            [],
             self._window.flip_horizontally)
 
         manager.register('flip_vert',
@@ -243,11 +247,11 @@ class EventHandler:
 
         # File operations
         manager.register('close',
-            [],
+            ['<Control>W'],
             self._window.filehandler.close_file)
 
         manager.register('quit',
-            [],
+            ['<Control>Q'],
             self._window.close_program)
 
         manager.register('save_and_quit',
@@ -299,7 +303,7 @@ class EventHandler:
             self._window.actiongroup.get_action('edit_archive').activate)
 
         manager.register('open',
-            [],
+            ['<Control>O'],
             self._window.actiongroup.get_action('open').activate)
 
         manager.register('enhance_image',
