@@ -44,7 +44,7 @@ BINDING_INFO = {
 
     'first_page' : { 'title': _('First page'), 'group': _('Navigation') },
     'last_page' : { 'title': _('Last page'), 'group': _('Navigation') },
-    'go_to' : { 'title': _('Last page'), 'group': _('Navigation') },
+    'go_to' : { 'title': _('Go to page'), 'group': _('Navigation') },
 
     'next_archive' : { 'title': _('Next archive'), 'group': _('Navigation') },
     'previous_archive' : { 'title': _('Previous archive'), 'group': _('Navigation') },
@@ -110,12 +110,12 @@ BINDING_INFO = {
     'osd_panel' : { 'title' : _('Show OSD panel'), 'group' : _('User interface') },
     'minimize' : { 'title' : _('Minimize'), 'group' : _('User interface') },
     'fullscreen' : { 'title': _('Fullscreen'), 'group': _('User interface') },
-    'toolbar' : { 'title': _('Toolbar'), 'group': _('User interface') },
-    'menubar' : { 'title': _('Menubar'), 'group': _('User interface') },
-    'statusbar' : { 'title': _('Statusbar'), 'group': _('User interface') },
-    'scrollbar' : { 'title': _('Scrollbars'), 'group': _('User interface') },
+    'toolbar' : { 'title': _('Show/hide toolbar'), 'group': _('User interface') },
+    'menubar' : { 'title': _('Show/hide menubar'), 'group': _('User interface') },
+    'statusbar' : { 'title': _('Show/hide statusbar'), 'group': _('User interface') },
+    'scrollbar' : { 'title': _('Show/hide scrollbars'), 'group': _('User interface') },
     'thumbnails' : { 'title': _('Thumbnails'), 'group': _('User interface') },
-    'hide_all' : { 'title': _('Hide all'), 'group': _('User interface') },
+    'hide_all' : { 'title': _('Show/hide all'), 'group': _('User interface') },
     'slideshow' : { 'title': _('Start slideshow'), 'group': _('User interface') },
 
     # File operations
@@ -126,19 +126,22 @@ BINDING_INFO = {
     'save_and_quit' : { 'title': _('Save and quit'), 'group': _('File') },
     'extract_page' : { 'title': _('Save As'), 'group': _('File') },
 
-    'comments' : { 'title': _('Comments...'), 'group': _('File') },
+    'comments' : { 'title': _('Archive comments'), 'group': _('File') },
     'properties' : { 'title': _('Properties'), 'group': _('File') },
     'preferences' : { 'title': _('Preferences'), 'group': _('File') },
 
-    'edit_archive' : { 'title': _('Edit archive...'), 'group': _('File') },
+    'edit_archive' : { 'title': _('Edit archive'), 'group': _('File') },
     'open' : { 'title': _('Open'), 'group': _('File') },
-    'enhance_image' : { 'title': _('Enhance image...'), 'group': _('File') },
-    'library' : { 'title': _('Library...'), 'group': _('File') },
+    'enhance_image' : { 'title': _('Enhance image'), 'group': _('File') },
+    'library' : { 'title': _('Library'), 'group': _('File') },
 }
 
 # Generate 9 entries for executing command 1 to 9
 for i in range(1, 10):
-    BINDING_INFO['execute_command_%d' %i] = { 'title' : _('Execute external command') + u' (%d)' % i , 'group' : _('External commands') }
+    BINDING_INFO['execute_command_%d' %i] = { 
+            'title' : _('Execute external command') + u' (%d)' % i,
+            'group' : _('External commands')
+    }
 
 
 class _KeybindingManager(object):
