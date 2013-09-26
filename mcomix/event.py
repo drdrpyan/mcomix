@@ -476,12 +476,16 @@ class EventHandler:
                 self._scroll_with_flipping(0, prefs['number of pixels to scroll per mouse wheel event'])
 
         elif event.direction == gtk.gdk.SCROLL_RIGHT:
+            if not prefs['flip with horizontal wheel']:
+                return
             if not self._window.is_manga_mode:
                 self._window.next_page()
             else:
                 self._previous_page_with_protection()
 
         elif event.direction == gtk.gdk.SCROLL_LEFT:
+            if not prefs['flip with horizontal wheel']:
+                return
             if not self._window.is_manga_mode:
                 self._previous_page_with_protection()
             else:

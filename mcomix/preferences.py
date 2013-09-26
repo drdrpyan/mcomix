@@ -50,6 +50,7 @@ prefs = {
     'invert smart scroll': False,
     'smart scroll percentage': 0.5,
     'flip with wheel': True,
+    'flip with horizontal wheel': True,
     'store recent file info': True,
     'hide all': False,
     'hide all in fullscreen': True,
