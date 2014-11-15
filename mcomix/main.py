@@ -353,7 +353,7 @@ class MainWindow(gtk.Window):
                 pixbufs[i] = self.enhancer.enhance(pixbufs[i])
 
             for i in range(n):
-                self.images[i].set_from_pixbuf(pixbufs[i])
+                image_tools.set_from_pixbuf(self.images[i], pixbufs[i])
 
             scales = tuple(map(lambda x, y: math.sqrt(tools.div(
                 tools.volume(x), tools.volume(y))), scaled_sizes, sizes))

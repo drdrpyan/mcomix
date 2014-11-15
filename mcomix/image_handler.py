@@ -67,7 +67,9 @@ class ImageHandler:
             self._wait_on_page(index + 1)
 
             try:
-                pixbuf = image_tools.load_pixbuf(self._image_files[index])
+                pixbuf = image_tools.load_pixbuf(
+                    self._image_files[index],
+                    allow_animation=True)
                 self._raw_pixbufs[index] = pixbuf
                 tools.garbage_collect()
             except Exception, e:

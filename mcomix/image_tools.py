@@ -19,7 +19,11 @@ _supported_formats = sorted(
                        gtk.gdk.pixbuf_get_formats())
         for extension in extlist])
 
+
 def fit_pixbuf_to_rectangle(src, rect, rotation):
+
+    if is_animation(src):
+        return src
 
     if rotation in (90, 270):
         rect = (rect[1], rect[0])
@@ -187,6 +191,10 @@ def get_most_common_edge_colour(pixbufs, edge=2):
     def get_edge_pixbuf(pixbuf, side, edge):
         """ Returns a pixbuf corresponding to the side passed in <side>.
         Valid sides are 'left', 'right', 'top', 'bottom'. """
+
+        if is_animation(pixbuf):
+            pixbuf = pixbuf.get_static_image()
+
         width = pixbuf.get_width()
         height = pixbuf.get_height()
         edge = min(edge, width, height)
@@ -250,10 +258,32 @@ def pixbuf_to_pil(pixbuf):
     mode = pixbuf.get_has_alpha() and 'RGBA' or 'RGB'
     return Image.frombuffer(mode, dimensions, pixels, 'raw', mode, stride, 1)
 
-def load_pixbuf(path):
+
+def is_animation(pixbuf):
+    if prefs['animate gifs']:
+        return isinstance(pixbuf, gtk.gdk.PixbufAnimation)
+    return False
+
+
+def set_from_pixbuf(image, pixbuf):
+    if is_animation(pixbuf):
+        return image.set_from_animation(pixbuf)
+    else:
+        return image.set_from_pixbuf(pixbuf)
+
+
+def load_pixbuf(path, allow_animation=False):
     """ Loads a pixbuf from a given image file. Works around GTK's
     slowness on Win32 by using PIL for loading instead and
     converting it afterwards. """
+
+    if prefs['animate gifs'] and allow_animation:
+        ## Special handling (aside from everything else)
+        res = gtk.gdk.PixbufAnimation(path)
+        if res.is_static_image():
+            res = res.get_static_image()
+        return res
+
     if sys.platform == 'win32' and gtk.gtk_version > (2, 18, 2):
         pil_img = Image.open(path)
         return pil_to_pixbuf(pil_img)
@@ -306,6 +336,9 @@ def get_implied_rotation(pixbuf):
     by a camera that is held sideways might store this fact in its EXIF data,
     and the pixbuf loader will set the orientation option correspondingly.
     """
+    if is_animation(pixbuf):
+        pixbuf = pixbuf.get_static_image()
+
     orientation = pixbuf.get_option('orientation')
     if orientation == '3':
         return 180
