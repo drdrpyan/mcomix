@@ -598,58 +598,58 @@ msgstr "가운데로 스크롤"
 
 #: mcomix/keybindings.py:65
 msgid "Scroll to middle right"
-msgstr ""
+msgstr "오른쪽 가운데로 스크롤"
 
 #: mcomix/keybindings.py:67
 msgid "Scroll to top left"
-msgstr ""
+msgstr "왼쪽 위로 스크롤"
 
 #: mcomix/keybindings.py:68
 msgid "Scroll to top center"
-msgstr ""
+msgstr "가운데 위로 스크롤"
 
 #: mcomix/keybindings.py:69
 msgid "Scroll to top right"
-msgstr ""
+msgstr "오른쪽 위로 스크롤"
 
 #: mcomix/keybindings.py:71
 msgid "Scroll down"
-msgstr ""
+msgstr "아래로 스크롤"
 
 #: mcomix/keybindings.py:72
 msgid "Scroll up"
-msgstr ""
+msgstr "위로 스크롤"
 
 #: mcomix/keybindings.py:73
 msgid "Scroll right"
-msgstr ""
+msgstr "오른쪽으로 스크롤"
 
 #: mcomix/keybindings.py:74
 msgid "Scroll left"
-msgstr ""
+msgstr "왼쪽으로 스크롤"
 
 #: mcomix/keybindings.py:76
 msgid "Smart scroll up"
-msgstr ""
+msgstr "위로 스마트 스크롤"
 
 #: mcomix/keybindings.py:77
 msgid "Smart scroll down"
-msgstr ""
+msgstr "아래로 스마트 스크롤"
 
 #: mcomix/keybindings.py:80
 msgid "Zoom in"
-msgstr ""
+msgstr "확대"
 
 #
 # File: src/ui.py, line: 42
 #: mcomix/keybindings.py:80 mcomix/keybindings.py:81 mcomix/keybindings.py:82
 #, fuzzy
 msgid "Zoom"
-msgstr "확대(_Z)"
+msgstr "확대/축소"
 
 #: mcomix/keybindings.py:81
 msgid "Zoom out"
-msgstr ""
+msgstr "축소"
 
 #: mcomix/keybindings.py:82
 msgid "Normal size"
@@ -660,7 +660,7 @@ msgstr ""
 #: mcomix/keybindings.py:84
 #, fuzzy
 msgid "Keep transformation"
-msgstr "회전 상태 유지(_K)"
+msgstr "회전 상태 유지"
 
 #
 # File: src/ui.py, line: 93
@@ -669,28 +669,28 @@ msgstr "회전 상태 유지(_K)"
 #: mcomix/keybindings.py:90
 #, fuzzy
 msgid "Transformation"
-msgstr "회전 상태 유지(_K)"
+msgstr "회전"
 
 #
 # File: src/ui.py, line: 52
 #: mcomix/keybindings.py:85 mcomix/keybindings.py:92 mcomix/keybindings.py:94
 #, fuzzy
 msgid "Rotate 90 degrees CW"
-msgstr "우측으로 90도 회전(_R)"
+msgstr "시계방향 90도 회전"
 
 #
 # File: src/ui.py, line: 54
 #: mcomix/keybindings.py:86
 #, fuzzy
 msgid "Rotate 180 degrees"
-msgstr "180도 회전(_G)"
+msgstr "180도 회전"
 
 #
 # File: src/ui.py, line: 56
 #: mcomix/keybindings.py:87 mcomix/keybindings.py:93 mcomix/keybindings.py:95
 #, fuzzy
 msgid "Rotate 90 degrees CCW"
-msgstr "좌측으로 90도 회전(_E)"
+msgstr "반시계방향 90도 회전"
 
 #
 # File: src/ui.py, line: 58
