@@ -123,20 +123,20 @@ msgstr "위치"
 #. TRANSLATORS: "Added" as in "Date Added"
 #: mcomix/bookmark_dialog.py:56
 msgid "Added"
-msgstr ""
+msgstr "추가됨"
 
 #: mcomix/bookmark_menu.py:24
 msgid "Add _Bookmark"
-msgstr ""
+msgstr "책갈피 추가(_B)"
 
 #: mcomix/bookmark_menu.py:26
 msgid "_Edit Bookmarks..."
-msgstr ""
+msgstr "책갈피 편집...(_E)"
 
 #: mcomix/callback.py:85
 #, python-format
 msgid "! Callback %(function)r failed: %(error)s"
-msgstr ""
+msgstr "! 콜백 %(function)r 실패: %(error)s"
 
 #
 # File: src/comment.py, line: 16
@@ -150,7 +150,7 @@ msgstr "주석"
 #: mcomix/comment_dialog.py:55
 #, python-format
 msgid "Could not read %s"
-msgstr "읽을 수 없습니다. %s"
+msgstr "%s를(을) 읽을 수 없습니다."
 
 #
 # File: src/edit.py, line: 255
@@ -160,7 +160,7 @@ msgid ""
 "Please note that the only files that are automatically added to this list "
 "are those files in archives that MComix recognizes as comments."
 msgstr ""
-"참고: Comix 가 주석으로 분류한 자료들은 이 목록에 자동적으로 추가됩니다."
+"참고: 압축파일 내 MComix가 주석으로 인식한 파일만 이 목록에 자동으로 추가합니다."
 
 #
 # File: src/edit.py, line: 270
@@ -179,11 +179,11 @@ msgstr "압축파일에서 제거"
 # File: src/edit.py, line: 28
 #: mcomix/edit_dialog.py:28 mcomix/keybindings.py:136
 msgid "Edit archive"
-msgstr "압축파일 수정"
+msgstr "압축파일 편집"
 
 #: mcomix/edit_dialog.py:40
 msgid "_Import"
-msgstr ""
+msgstr "가져오기(_I)"
 
 #
 # File: src/edit.py, line: 50
@@ -197,7 +197,7 @@ msgstr "이미지"
 #: mcomix/edit_dialog.py:57
 #, fuzzy
 msgid "Comment files"
-msgstr "주석"
+msgstr "주석 파일"
 
 #
 # File: src/edit.py, line: 99
