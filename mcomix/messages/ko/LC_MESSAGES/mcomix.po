@@ -501,28 +501,28 @@ msgstr "10페이지 다음으로"
 #: mcomix/keybindings.py:44
 #, fuzzy
 msgid "Previous page (dynamic)"
-msgstr "이전 페이지"
+msgstr "이전 페이지 (계속해서)"
 
 #
 # File: src/ui.py, line: 285
 #: mcomix/keybindings.py:45
 #, fuzzy
 msgid "Next page (dynamic)"
-msgstr "다음 페이지"
+msgstr "다음 페이지 (계속해서)"
 
 #
 # File: src/ui.py, line: 284
 #: mcomix/keybindings.py:46
 #, fuzzy
 msgid "Previous page (always one page)"
-msgstr "이전 페이지"
+msgstr "이전 페이지 (한장씩)"
 
 #
 # File: src/ui.py, line: 285
 #: mcomix/keybindings.py:47
 #, fuzzy
 msgid "Next page (always one page)"
-msgstr "다음 페이지"
+msgstr "다음 페이지(한장씩)"
 
 #
 # File: src/ui.py, line: 282
@@ -541,33 +541,33 @@ msgstr "마지막 페이지"
 #: mcomix/keybindings.py:51
 #, fuzzy
 msgid "Go to page"
-msgstr "다음 페이지"
+msgstr "페이지로 이동"
 
 #
 # File: src/edit.py, line: 28
 #: mcomix/keybindings.py:53 mcomix/ui.py:52
 #, fuzzy
 msgid "Next archive"
-msgstr "압축파일 수정"
+msgstr "다음 압축파일"
 
 #
 # File: src/ui.py, line: 284
 #: mcomix/keybindings.py:54 mcomix/ui.py:54
 #, fuzzy
 msgid "Previous archive"
-msgstr "이전 페이지"
+msgstr "이전 압축파일"
 
 #: mcomix/keybindings.py:55 mcomix/ui.py:55 mcomix/ui.py:56
 msgid "Next directory"
-msgstr ""
+msgstr "다음 디렉토리"
 
 #: mcomix/keybindings.py:56 mcomix/ui.py:57 mcomix/ui.py:58
 msgid "Previous directory"
-msgstr ""
+msgstr "이전 디렉토리"
 
 #: mcomix/keybindings.py:59
 msgid "Scroll to bottom left"
-msgstr ""
+msgstr "왼쪽 아래로 스크롤"
 
 #
 # File: src/preferences.py, line: 167
@@ -582,19 +582,19 @@ msgstr "스크롤"
 
 #: mcomix/keybindings.py:60
 msgid "Scroll to bottom center"
-msgstr ""
+msgstr "가운데 아래로 스크롤"
 
 #: mcomix/keybindings.py:61
 msgid "Scroll to bottom right"
-msgstr ""
+msgstr "오른쪽 아래로 스크롤"
 
 #: mcomix/keybindings.py:63
 msgid "Scroll to middle left"
-msgstr ""
+msgstr "왼쪽 가운데로 스크롤"
 
 #: mcomix/keybindings.py:64
 msgid "Scroll to center"
-msgstr ""
+msgstr "가운데로 스크롤"
 
 #: mcomix/keybindings.py:65
 msgid "Scroll to middle right"
