@@ -803,15 +803,15 @@ msgstr "전체화면에서 나가기"
 #: mcomix/keybindings.py:120 mcomix/keybindings.py:121
 #: mcomix/keybindings.py:122 mcomix/preferences_dialog.py:69
 msgid "User interface"
-msgstr ""
+msgstr "사용자 인터페이스"
 
 #: mcomix/keybindings.py:113
 msgid "Show OSD panel"
-msgstr ""
+msgstr "OSD 패널 보이기"
 
 #: mcomix/keybindings.py:114
 msgid "Minimize"
-msgstr ""
+msgstr "최소화"
 
 #
 # File: src/preferences.py, line: 271
@@ -821,49 +821,49 @@ msgstr "전체화면"
 
 #: mcomix/keybindings.py:116
 msgid "Show/hide toolbar"
-msgstr ""
+msgstr "도구 막대 보이기/숨기기"
 
 #: mcomix/keybindings.py:117
 msgid "Show/hide menubar"
-msgstr ""
+msgstr "메뉴 막대 보이기/숨기기"
 
 #
 # File: src/ui.py, line: 83
 #: mcomix/keybindings.py:118
 #, fuzzy
 msgid "Show/hide statusbar"
-msgstr "상태바(_A)"
+msgstr "상태 막대 보이기/숨기기"
 
 #
 # File: src/ui.py, line: 85
 #: mcomix/keybindings.py:119
 #, fuzzy
 msgid "Show/hide scrollbars"
-msgstr "스크롤바(_C)"
+msgstr "스크롤 막대 보이기/숨기기"
 
 #
 # File: src/preferences.py, line: 109
 #: mcomix/keybindings.py:120 mcomix/preferences_dialog.py:104
 msgid "Thumbnails"
-msgstr "미리보기"
+msgstr "썸네일"
 
 #
 # File: src/ui.py, line: 89
 #: mcomix/keybindings.py:121
 #, fuzzy
 msgid "Show/hide all"
-msgstr "모두 숨김(_I)"
+msgstr "모두 보이기/숨기기"
 
 #
 # File: src/preferences.py, line: 279
 #: mcomix/keybindings.py:122 mcomix/slideshow.py:47 mcomix/ui.py:132
 #, fuzzy
 msgid "Start slideshow"
-msgstr "슬라이드쇼"
+msgstr "슬라이드쇼 시작"
 
 #: mcomix/keybindings.py:125
 msgid "Delete"
-msgstr ""
+msgstr "삭제"
 
 #
 # File: src/preferences.py, line: 196
@@ -883,21 +883,21 @@ msgstr "파일"
 #: mcomix/keybindings.py:126
 #, fuzzy
 msgid "Refresh"
-msgstr "기타 파일"
+msgstr "새로 고침"
 
 #
 # File: src/ui.py, line: 48
 #: mcomix/keybindings.py:127
 #, fuzzy
 msgid "Close"
-msgstr "닫기(_C)"
+msgstr "닫기"
 
 #
 # File: src/ui.py, line: 50
 #: mcomix/keybindings.py:128
 #, fuzzy
 msgid "Quit"
-msgstr "종료(_Q)"
+msgstr "종료"
 
 #: mcomix/keybindings.py:129
 msgid "Save and quit"
