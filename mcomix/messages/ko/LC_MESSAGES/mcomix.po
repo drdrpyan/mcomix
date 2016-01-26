@@ -320,11 +320,11 @@ msgstr "RAR 압축파일"
 
 #: mcomix/file_chooser_base_dialog.py:115
 msgid "7z archives"
-msgstr ""
+msgstr "7z 압축파일"
 
 #: mcomix/file_chooser_base_dialog.py:119
 msgid "LHA archives"
-msgstr ""
+msgstr "LHA 압축파일"
 
 #
 # File: src/filechooser.py, line: 125
@@ -343,7 +343,7 @@ msgstr "내용을 덮어 쓰게됩니다."
 # File: src/library.py, line: 789
 #: mcomix/file_chooser_library_dialog.py:18
 msgid "Add books"
-msgstr "만화책 추가"
+msgstr "책 추가"
 
 #
 # File: src/filechooser.py, line: 171
@@ -376,7 +376,7 @@ msgstr "PNG 이미지"
 #: mcomix/file_chooser_simple_dialog.py:27
 #, fuzzy
 msgid "GIF images"
-msgstr "PNG 이미지"
+msgstr "GIF 이미지"
 
 #
 # File: src/edit.py, line: 50
@@ -384,7 +384,7 @@ msgstr "PNG 이미지"
 #: mcomix/file_chooser_simple_dialog.py:28
 #, fuzzy
 msgid "TIFF images"
-msgstr "이미지"
+msgstr "TIFF 이미지"
 
 #
 # File: src/filechooser.py, line: 174
@@ -393,7 +393,7 @@ msgstr "이미지"
 #: mcomix/file_chooser_simple_dialog.py:29
 #, fuzzy
 msgid "BMP images"
-msgstr "PNG 이미지"
+msgstr "BMP 이미지"
 
 #
 # File: src/filehandler.py, line: 285
