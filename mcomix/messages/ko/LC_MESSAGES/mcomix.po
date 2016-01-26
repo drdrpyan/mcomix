@@ -697,26 +697,26 @@ msgstr "반시계방향 90도 회전"
 #: mcomix/keybindings.py:88
 #, fuzzy
 msgid "Flip horizontally"
-msgstr "좌우 뒤집기(_P)"
+msgstr "좌우 뒤집기"
 
 #
 # File: src/ui.py, line: 60
 #: mcomix/keybindings.py:89
 #, fuzzy
 msgid "Flip vertically"
-msgstr "상하 뒤집기(_V)"
+msgstr "상하 뒤집기"
 
 #: mcomix/keybindings.py:90
 msgid "Never autorotate"
-msgstr ""
+msgstr "자동 회전 하지 않음"
 
 #: mcomix/keybindings.py:92 mcomix/keybindings.py:93
 msgid "Autorotate by width"
-msgstr ""
+msgstr "가로 길이에 따라 자동 회전"
 
 #: mcomix/keybindings.py:94 mcomix/keybindings.py:95
 msgid "Autorotate by height"
-msgstr ""
+msgstr "세로 길이에 따라 자동 회전"
 
 #
 # File: src/preferences.py, line: 177
@@ -735,17 +735,17 @@ msgstr "양면 보기"
 #: mcomix/keybindings.py:108
 #, fuzzy
 msgid "View mode"
-msgstr "가로 폭 맞춤"
+msgstr "보기 모드"
 
 #
 # File: src/ui.py, line: 297
 #: mcomix/keybindings.py:98 mcomix/ui.py:125
 msgid "Manga mode"
-msgstr "만화 페이지순 보기"
+msgstr "일본 만화 페이지순 보기"
 
 #: mcomix/keybindings.py:99 mcomix/ui.py:126
 msgid "Invert smart scroll"
-msgstr ""
+msgstr "스마트 스크롤 방향 뒤집기"
 
 #
 # File: src/ui.py, line: 298
@@ -755,14 +755,14 @@ msgstr "돋보기"
 
 #: mcomix/keybindings.py:102 mcomix/ui.py:135
 msgid "Stretch small images"
-msgstr ""
+msgstr "작은 이미지 확대"
 
 #
 # File: src/preferences.py, line: 262
 # File: src/ui.py, line: 288
 #: mcomix/keybindings.py:104 mcomix/ui.py:143
 msgid "Best fit mode"
-msgstr "최적 보기"
+msgstr "최적 폭 맞춤 보기"
 
 #
 # File: src/preferences.py, line: 263
@@ -783,18 +783,18 @@ msgstr "세로 폭 맞춤"
 #: mcomix/keybindings.py:107
 #, fuzzy
 msgid "Fit size mode"
-msgstr "가로폭 맞춤(_W)"
+msgstr "크기 맞춤"
 
 #
 # File: src/preferences.py, line: 265
 # File: src/ui.py, line: 294
 #: mcomix/keybindings.py:108 mcomix/ui.py:151
 msgid "Manual zoom mode"
-msgstr "수동 줌 조절"
+msgstr "수동 확대/축소 조절"
 
 #: mcomix/keybindings.py:111
 msgid "Exit from fullscreen"
-msgstr ""
+msgstr "전체화면에서 나가기"
 
 #: mcomix/keybindings.py:111 mcomix/keybindings.py:113
 #: mcomix/keybindings.py:114 mcomix/keybindings.py:115
