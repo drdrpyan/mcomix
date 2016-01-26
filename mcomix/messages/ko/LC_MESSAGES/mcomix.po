@@ -203,7 +203,7 @@ msgstr "주석 파일"
 # File: src/edit.py, line: 99
 #: mcomix/edit_dialog.py:135
 msgid "The new archive could not be saved!"
-msgstr "새 압축파일을 저장할 수 없습니다."
+msgstr "새 압축파일을 저장할 수 없습니다!"
 
 #
 # File: src/edit.py, line: 101
@@ -221,50 +221,50 @@ msgstr "ZIP 압축파일로 저장되어있습니다."
 # File: src/enhance.py, line: 51
 #: mcomix/enhance_dialog.py:17 mcomix/keybindings.py:138
 msgid "Enhance image"
-msgstr "이미지 향상"
+msgstr "이미지 보정"
 
 #: mcomix/enhance_dialog.py:22
 msgid "Reset to defaults."
-msgstr ""
+msgstr "기본값으로 리셋"
 
 #: mcomix/enhance_dialog.py:25
 msgid "Save the selected values as default for future files."
-msgstr ""
+msgstr "앞으로를 위해 선택한 값을 기본값으로 저장."
 
 #
 # File: src/enhance.py, line: 79
 #: mcomix/enhance_dialog.py:54
 #, fuzzy
 msgid "_Brightness:"
-msgstr "명도"
+msgstr "명도(_B):"
 
 #
 # File: src/enhance.py, line: 90
 #: mcomix/enhance_dialog.py:67
 #, fuzzy
 msgid "_Contrast:"
-msgstr "대비"
+msgstr "대비(_C):"
 
 #
 # File: src/enhance.py, line: 101
 #: mcomix/enhance_dialog.py:80
 #, fuzzy
 msgid "S_aturation:"
-msgstr "채도"
+msgstr "채도(_a):"
 
 #
 # File: src/enhance.py, line: 112
 #: mcomix/enhance_dialog.py:93
 #, fuzzy
 msgid "S_harpness:"
-msgstr "선명함"
+msgstr "선명도(_h):"
 
 #
 # File: src/enhance.py, line: 126
 #: mcomix/enhance_dialog.py:109
 #, fuzzy
 msgid "_Automatically adjust contrast"
-msgstr "자동으로 명암을 조정합니다."
+msgstr "자동으로 명암 대비를 조정합니다.(_A)"
 
 #
 # File: src/enhance.py, line: 128
@@ -272,7 +272,8 @@ msgstr "자동으로 명암을 조정합니다."
 msgid ""
 "Automatically adjust contrast (both lightness and darkness), separately for "
 "each colour band."
-msgstr "자동으로 명암을 조절합니다"
+msgstr ""
+"각 색 영역마다 따로 자동으로 명암 대비를 조정합니다."
 
 #
 # File: src/filechooser.py, line: 35
