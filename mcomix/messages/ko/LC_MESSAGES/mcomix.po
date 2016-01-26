@@ -17,7 +17,7 @@ msgstr ""
 #: mcomix/about_dialog.py:28
 #, python-format
 msgid "%s is an image viewer specifically designed to handle comic books."
-msgstr ""
+msgstr "%s는 만화책을 전문으로 다루기 위해 제작한 이미지 뷰어입니다."
 
 #
 # File: src/about.py, line: 57
@@ -28,50 +28,50 @@ msgstr "ZIP, RAR 그리고 tar 압축파일과 일반 이미지 파일을 읽습
 #: mcomix/about_dialog.py:34
 #, python-format
 msgid "%s is licensed under the terms of the GNU General Public License."
-msgstr ""
+msgstr "%s는 GNU General Public License를 따릅니다."
 
 #: mcomix/about_dialog.py:36
 #, python-format
 msgid "A copy of this license can be obtained from %s"
-msgstr ""
+msgstr "라이센스의 전문은 %s에서 볼 수 있습니다."
 
 #: mcomix/archive_extractor.py:45
 #, python-format
 msgid "Non-supported archive format: %s"
-msgstr ""
+msgstr "지원하지 않는 압축 형식: %s"
 
 #: mcomix/archive_extractor.py:153
 #, python-format
 msgid "! Extraction error: %s"
-msgstr ""
+msgstr "! 압축 해제 에러: %s"
 
 #: mcomix/archive_packer.py:57
 #, python-format
 msgid "! Could not create archive at path \"%s\""
-msgstr ""
+msgstr "! 경로 \"%s\"에 압축파일을 생성할 수 없습니다."
 
 #: mcomix/archive_packer.py:71 mcomix/archive_packer.py:96
 #, python-format
 msgid ""
 "! Could not add file %(sourcefile)s to archive %(archivefile)s, aborting..."
-msgstr ""
+msgstr "! 파일 %(sourcefile)s를(을) %(archivefile)s에 추가할 수 없습니다. 취소하는 중..."
 
 #: mcomix/archive_tools.py:99
 #, python-format
 msgid "! Could not read %s"
-msgstr ""
+msgstr "! %s를(을) 읽을 수 없습니다."
 
 #: mcomix/bookmark_backend.py:150
 #, python-format
 msgid "! Could not parse bookmarks file %s"
-msgstr ""
+msgstr "! 책갈피 파일 %s를 해석할 수 없습니다."
 
 #: mcomix/bookmark_backend.py:213
 #, python-format
 msgid "Replace existing bookmark on page %s?"
 msgid_plural "Replace existing bookmarks on pages %s?"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "페이지 %s에 이미 존재하는 책갈피를 교체하시겠습니까?"
+msgstr[1] "페이지 %s에 이미 존재하는 책갈피들을 교체하시겠습니까?"
 
 #: mcomix/bookmark_backend.py:218
 #, python-format
@@ -79,20 +79,23 @@ msgid ""
 "The current book already contains marked pages. Do you want to replace them "
 "with a new bookmark on page %d? "
 msgstr ""
+"현재 책은 이미 책갈피로 표시된 페이지를 포함하고있습니다."
+"기존의 책갈피를 페이지 %d의 새 책갈피로 교체하시겠습니까?"
 
 #: mcomix/bookmark_backend.py:221
 msgid ""
 "Selecting \"No\" will create a new bookmark without affecting the other "
 "bookmarks."
 msgstr ""
+"\"아니요\"를 선택하면 다른 책갈피에 영향을 주지 않고 새 책갈피를 생성합니다."
 
 #: mcomix/bookmark_dialog.py:16
 msgid "Edit Bookmarks"
-msgstr ""
+msgstr "책갈피 편집"
 
 #: mcomix/bookmark_dialog.py:51
 msgid "Type"
-msgstr ""
+msgstr "유형"
 
 #
 # File: src/bookmark.py, line: 255
