@@ -901,21 +901,21 @@ msgstr "종료"
 
 #: mcomix/keybindings.py:129
 msgid "Save and quit"
-msgstr ""
+msgstr "저장하고 종료"
 
 #
 # File: src/filechooser.py, line: 39
 #: mcomix/keybindings.py:130
 #, fuzzy
 msgid "Save As"
-msgstr "저장"
+msgstr "다른 이름으로 저장"
 
 #
 # File: src/properties.py, line: 135
 #: mcomix/keybindings.py:132
 #, fuzzy
 msgid "Archive comments"
-msgstr "압축파일"
+msgstr "압축파일 주석"
 
 #
 # File: src/properties.py, line: 89
@@ -937,34 +937,34 @@ msgstr "라이브러리"
 
 #: mcomix/keybindings.py:145
 msgid "Execute external command"
-msgstr ""
+msgstr "외부 명령 실행"
 
 #
 # File: src/bookmark.py, line: 229
 #: mcomix/keybindings.py:146
 #, fuzzy
 msgid "External commands"
-msgstr "북마크 편집"
+msgstr "외부 명령"
 
 #: mcomix/keybindings.py:183
 #, python-format
 msgid "Keybinding for \"%(action)s\" overrides hotkey for another action."
-msgstr ""
+msgstr "\"%(action)s\"에 할당한 키는 다른 동작의 단축키보다 우선 동작합니다."
 
 #: mcomix/keybindings.py:297
 #, python-format
 msgid "Couldn't load keybindings: %s"
-msgstr ""
+msgstr "키설정을 불러오지 못했습니다.: %s"
 
 #: mcomix/last_read_page.py:17 mcomix/library/backend.py:21
 msgid "! Could neither find pysqlite2 nor sqlite3."
-msgstr ""
+msgstr "! pysqlite2, sqlite3 둘 중 어느 하나도 찾을 수 없습니다."
 
 #: mcomix/last_read_page.py:210 mcomix/thumbnail_tools.py:110
 #: mcomix/library/book_area.py:567
 #, python-format
 msgid "! Could not remove file \"%s\""
-msgstr ""
+msgstr "! 파일 \"%s\"을(를) 제거할 수 없습니다."
 
 #
 # File: src/main.py, line: 666
@@ -974,27 +974,27 @@ msgstr "슬라이드쇼"
 
 #: mcomix/main.py:911
 msgid "Save page as"
-msgstr ""
+msgstr "페이지를 다른 이름으로 저장"
 
 #: mcomix/main.py:931
 #, python-format
 msgid "Delete \"%s\"?"
-msgstr ""
+msgstr "\"%s\"을(를) 삭제합니까?"
 
 #: mcomix/main.py:932
 msgid "The file will be deleted from your harddisk."
-msgstr ""
+msgstr "파일이 하드디스크에서 삭제됩니다."
 
 #: mcomix/message_dialog.py:28
 msgid "Do not ask again."
-msgstr ""
+msgstr "더 이상 묻지 않음."
 
 #
 # File: src/bookmark.py, line: 229
 #: mcomix/openwith_menu.py:22
 #, fuzzy
 msgid "_Edit commands"
-msgstr "북마크 편집"
+msgstr "주석 편집(_E)"
 
 #: mcomix/openwith.py:77
 #, python-format
